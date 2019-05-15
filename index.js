@@ -8,6 +8,7 @@ import {
   VrButton,
   Image
 } from 'react-360';
+import Entity from 'react-360/Libraries/Mesh/Entity'
 
 class Background extends React.Component {
   constructor(props) {
@@ -62,8 +63,8 @@ class Rooms extends React.Component {
             <Text style={styles.buttonText}>{'<'}</Text>
           </VrButton>
           <View>
-            <Text style={styles.title}>Töölön Sinisten virtuaalikämppä</Text>
-            <Text style={styles.title}>Vaihda paikkaa nuolilla</Text>
+            <Text style={styles.title}>Töölön Sinisten</Text>
+            <Text style={styles.title}>Virtuaalikämppä</Text>
             <Text style={styles.title}>{current.title}</Text>
           </View>
           <VrButton onClick={this._nextPhoto} style={styles.button}>

@@ -1,5 +1,6 @@
 
 import {ReactInstance} from 'react-360-web';
+import {Surface} from 'react-360-web';
 
 function init(bundle, parent, options = {}) {
   const r360 = new ReactInstance(bundle, parent, {
@@ -7,6 +8,11 @@ function init(bundle, parent, options = {}) {
     ...options,
   });
 
+  const cylinderSurface = new Surface(
+    1000, /* width */
+    600, /* height */
+    Surface.SurfaceShape.Cylinder /* shape */
+  );
   r360.renderToSurface(
     r360.createRoot('kamppa', {
       photos: [
@@ -23,6 +29,7 @@ function init(bundle, parent, options = {}) {
       ],
     }),
     r360.getDefaultSurface(),
+    //myCylinderSurface
   );
 }
 
