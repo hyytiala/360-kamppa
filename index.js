@@ -30,7 +30,7 @@ class Background extends React.Component {
   }
 }
 
-class Rooms extends React.Component {
+class Scenes extends React.Component {
   state = {
     index: 0,
   };
@@ -83,6 +83,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     height: 600,
     width: 1000,
+    transform: [{translateX: '10px'}]
   },
   controls: {
     backgroundColor: 'rgba(0, 0, 0, 0.7)',
@@ -112,4 +113,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('kamppa', () => Rooms);
+AppRegistry.registerComponent('kamppa', () => Scenes);

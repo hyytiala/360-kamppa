@@ -9,7 +9,7 @@ function init(bundle, parent, options = {}) {
   });
 
   const cylinderSurface = new Surface(
-    1000, /* width */
+    3000, /* width */
     600, /* height */
     Surface.SurfaceShape.Cylinder /* shape */
   );
@@ -28,8 +28,8 @@ function init(bundle, parent, options = {}) {
         {uri: './static_assets/piha_2.jpg', title: 'Puuliiteri & hakkuupaikka', format: '2D'},
       ],
     }),
-    r360.getDefaultSurface(),
-    //myCylinderSurface
+    //r360.getDefaultSurface(),
+    cylinderSurface
   );
 }
 
