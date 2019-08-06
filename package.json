@@ -1,7 +1,17 @@
 {
-  "name": "kolo",
+  "name": "Virtuaalikämppä",
   "version": "0.0.1",
   "private": true,
+  "contributors": [
+    {
+      "name": "Otto Hyytiälä",
+      "url": "https://github.com/hyytiala"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hyytiala/360-kamppa.git"
+  },
   "scripts": {
     "start": "node -e \"console.log('open browser at http://localhost:8081/index.html\\n\\n');\" && node node_modules/react-native/local-cli/cli.js start",
     "bundle": "node node_modules/react-360/scripts/bundle.js",
