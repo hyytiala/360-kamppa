@@ -33,23 +33,14 @@ class Background extends React.Component {
 class Scenes extends React.Component {
   state = {
     index: 0,
-  };
+  }
 
-  _prevPhoto = () => {
-    let next = this.state.index - 1;
-    if (next < 0) {
-      next += this.props.photos.length;
-    }
+  setScene = (id) => {
+    const index = this.props.photos.findIndex(p => p.name === id)
     this.setState({
-      index: next,
-    });
-  };
-
-  _nextPhoto = () => {
-    this.setState({
-      index: this.state.index + 1,
-    });
-  };
+      index
+    })
+  }
 
   render() {
     const current = this.props.photos[
@@ -58,19 +49,11 @@ class Scenes extends React.Component {
     return (
       <View style={styles.wrapper}>
         <Background uri={current.uri} format={current.format} />
-        <View style={styles.controls}>
-          <VrButton onClick={this._prevPhoto} style={styles.button}>
-            <Text style={styles.buttonText}>{'<'}</Text>
+        {current.buttons.map(b =>
+          <VrButton key={b.action} onClick={() => this.setScene(b.action)} style={b.style}>
+            <Text style={styles.buttonText}>{b.title}</Text>
           </VrButton>
-          <View>
-            <Text style={styles.title}>Töölön Sinisten</Text>
-            <Text style={styles.title}>Virtuaalikämppä</Text>
-            <Text style={styles.title}>{current.title}</Text>
-          </View>
-          <VrButton onClick={this._nextPhoto} style={styles.button}>
-            <Text style={styles.buttonText}>{'>'}</Text>
-          </VrButton>
-        </View>
+        )}
       </View>
     );
   }
@@ -81,17 +64,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    height: 600,
-    width: 1000,
-    transform: [{translateX: '10px'}]
+    height: 2820,
+    width: 5640
   },
   controls: {
     backgroundColor: 'rgba(0, 0, 0, 0.7)',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    width: 600,
     padding: 10,
+    transform: [{translate: [-100, 200, 0]}]
   },
   title: {
     color: '#ffffff',
@@ -107,8 +86,8 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     textAlign: 'center',
-    color: '#000000',
-    fontSize: 30,
+    color: 'white',
+    fontSize: 40,
     fontWeight: 'bold',
   },
 });
