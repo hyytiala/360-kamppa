@@ -10,14 +10,15 @@ function init(bundle, parent, options = {}) {
   });
 
   const cylinderSurface = new Surface(
-    5640,
-    2820,
+    4680,
+    720,
     Surface.SurfaceShape.Cylinder
   );
   r360.renderToSurface(
     r360.createRoot('kamppa', {
       photos: scenes
     }),
+    //r360.getDefaultSurface(),
     cylinderSurface
   );
 }

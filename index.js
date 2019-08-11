@@ -46,9 +46,9 @@ class Scenes extends React.Component {
     const current = this.props.photos[
     this.state.index % this.props.photos.length
       ];
+    Environment.setBackgroundImage(current.uri, {format: '2D'});
     return (
       <View style={styles.wrapper}>
-        <Background uri={current.uri} format={current.format} />
         {current.buttons.map(b =>
           <VrButton key={b.action} onClick={() => this.setScene(b.action)} style={b.style}>
             <Text style={styles.buttonText}>{b.title}</Text>
@@ -64,8 +64,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    height: 2820,
-    width: 5640
+    height: 720,
+    width: 4680
   },
   controls: {
     backgroundColor: 'rgba(0, 0, 0, 0.7)',
