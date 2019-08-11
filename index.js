@@ -34,10 +34,10 @@ class Scenes extends React.Component {
     }
   }
 
-  setScene = async (id) => {
+  setScene = (id) => {
     const index = this.props.photos.findIndex(p => p.name === id)
     try {
-      await AsyncStorage.setItem('bg_id', index)
+      AsyncStorage.setItem('bg_id', index)
     } catch (error) {
       console.log(error)
     }
