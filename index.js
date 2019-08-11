@@ -62,10 +62,11 @@ class Scenes extends React.Component {
 const styles = StyleSheet.create({
   wrapper: {
     flexDirection: 'row',
+    backgroundColor: 'rgba(0, 0, 0, 0.2)',
     alignItems: 'center',
     justifyContent: 'center',
-    height: 720,
-    width: 4680
+    height: 1500,
+    width: 4096
   },
   controls: {
     backgroundColor: 'rgba(0, 0, 0, 0.7)',
@@ -75,7 +76,7 @@ const styles = StyleSheet.create({
   title: {
     color: '#ffffff',
     textAlign: 'center',
-    fontSize: 36,
+    fontSize: 38,
     fontWeight: 'bold',
   },
   button: {

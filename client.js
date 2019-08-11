@@ -10,8 +10,8 @@ function init(bundle, parent, options = {}) {
   });
 
   const cylinderSurface = new Surface(
-    4680,
-    720,
+    4096,
+    1500,
     Surface.SurfaceShape.Cylinder
   );
   r360.renderToSurface(

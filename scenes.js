@@ -61,7 +61,7 @@ export const scenes = [{
         action: 'main_1',
         style: {
           ...buttonStyle,
-          transform: [{ translate: [-1900, 10, 0] }]
+          transform: [{ translate: [-2000, 10, 0] }]
         },
       }
     ]
@@ -117,7 +117,22 @@ export const scenes = [{
     title: 'Keittiö',
     uri: './static_assets/keittio.jpg',
     buttons: [
-
+      {
+        title: 'Eteinen',
+        action: 'kamppa_lobby',
+        style: {
+          ...buttonStyle,
+          transform: [{ translate: [630, 0, 0] }]
+        },
+      },
+      {
+        title: 'Pikkukämppä',
+        action: 'office',
+        style: {
+          ...buttonStyle,
+          transform: [{ translate: [-1100, 0, 0] }]
+        },
+      }
     ]
   },
   {
@@ -125,7 +140,22 @@ export const scenes = [{
     title: 'Pikkukämppä',
     uri: './static_assets/pikkukamppa.jpg',
     buttons: [
-
+      {
+        title: 'Tupa',
+        action: 'main_1',
+        style: {
+          ...buttonStyle,
+          transform: [{ translate: [1150, 0, 0] }]
+        },
+      },
+      {
+        title: 'Keittiö',
+        action: 'kitchen',
+        style: {
+          ...buttonStyle,
+          transform: [{ translate: [-2000, 0, 0] }]
+        },
+      }
     ]
   },
   {
@@ -133,15 +163,45 @@ export const scenes = [{
     title: 'Tupa',
     uri: './static_assets/tupa_2.jpg',
     buttons: [
-
+      {
+        title: 'Parvi',
+        action: 'main_2',
+        style: {
+          ...buttonStyle,
+          transform: [{ translate: [1300, 0, 0] }]
+        },
+      },
+      {
+        title: 'Eteinen',
+        action: 'kamppa_lobby',
+        style: {
+          ...buttonStyle,
+          transform: [{ translate: [-1350, 0, 0] }]
+        },
+      },
+      {
+        title: 'Pikkukämppä',
+        action: 'office',
+        style: {
+          ...buttonStyle,
+          transform: [{ translate: [-400, 0, 0] }]
+        },
+      }
     ]
   },
   {
     name: 'main_2',
-    title: 'Tupa',
+    title: 'Parvi',
     uri: './static_assets/tupa_1.jpg',
     buttons: [
-
+      {
+        title: 'Tupa',
+        action: 'main_1',
+        style: {
+          ...buttonStyle,
+          transform: [{ translate: [100, 0, 0] }]
+        },
+      }
     ]
   },
   {
@@ -149,7 +209,22 @@ export const scenes = [{
     title: 'Pesutupa',
     uri: './static_assets/pesutupa.jpg',
     buttons: [
-
+      {
+        title: 'Sauna',
+        action: 'sauna',
+        style: {
+          ...buttonStyle,
+          transform: [{ translate: [0, 0, 0] }]
+        },
+      },
+      {
+        title: 'Saunan tupa',
+        action: 'sauna_lobby',
+        style: {
+          ...buttonStyle,
+          transform: [{ translate: [-1350, 0, 0] }]
+        },
+      }
     ]
   },
   {
@@ -157,7 +232,14 @@ export const scenes = [{
     title: 'Sauna',
     uri: './static_assets/sauna.jpg',
     buttons: [
-
+      {
+        title: 'Pesuhuone',
+        action: 'bathroom',
+        style: {
+          ...buttonStyle,
+          transform: [{ translate: [1300, 0, 0] }]
+        },
+      }
     ]
   }
 ]
