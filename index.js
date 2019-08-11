@@ -62,7 +62,6 @@ class Scenes extends React.Component {
 const styles = StyleSheet.create({
   wrapper: {
     flexDirection: 'row',
-    backgroundColor: 'rgba(0, 0, 0, 0.2)',
     alignItems: 'center',
     justifyContent: 'center',
     height: 1500,
