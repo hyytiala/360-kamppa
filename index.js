@@ -6,7 +6,8 @@ import {
   Text,
   View,
   VrButton,
-  NativeModules
+  NativeModules,
+  AsyncStorage
 } from 'react-360'
 
 class Scenes extends React.Component {
@@ -14,8 +15,32 @@ class Scenes extends React.Component {
     index: 0,
   }
 
-  setScene = (id) => {
+  componentDidMount() {
+    this.checkCache()
+  }
+
+  checkCache = async () => {
+    console.log('here')
+    try {
+      const value = await AsyncStorage.getItem('bg_id')
+      console.log(value)
+      if (value !== null) {
+        this.setState({
+          index: value
+        })
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  setScene = async (id) => {
     const index = this.props.photos.findIndex(p => p.name === id)
+    try {
+      await AsyncStorage.setItem('bg_id', index)
+    } catch (error) {
+      console.log(error)
+    }
     this.setState({
       index
     })
