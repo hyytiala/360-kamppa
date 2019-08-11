@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import {
   AppRegistry,
   Environment,
@@ -6,29 +6,8 @@ import {
   Text,
   View,
   VrButton,
-  Image
-} from 'react-360';
-import Entity from 'react-360/Libraries/Mesh/Entity'
-
-class Background extends React.Component {
-  constructor(props) {
-    super();
-    Environment.setBackgroundImage(props.uri, {format: props.format});
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (
-      nextProps.uri !== this.props.uri ||
-      nextProps.format !== this.props.format
-    ) {
-      Environment.setBackgroundImage(nextProps.uri, {format: nextProps.format});
-    }
-  }
-
-  render() {
-    return null;
-  }
-}
+  NativeModules
+} from 'react-360'
 
 class Scenes extends React.Component {
   state = {
@@ -42,54 +21,63 @@ class Scenes extends React.Component {
     })
   }
 
+  handleLinks = (href) => {
+    console.log(href)
+    NativeModules.LinkingManager.openURL(href)
+  }
+
   render() {
     const current = this.props.photos[
     this.state.index % this.props.photos.length
-      ];
-    Environment.setBackgroundImage(current.uri, {format: '2D'});
+      ]
+    Environment.setBackgroundImage(current.uri, { format: '2D' })
     return (
       <View style={styles.wrapper}>
-        {current.buttons.map(b =>
-          <VrButton key={b.action} onClick={() => this.setScene(b.action)} style={b.style}>
-            <Text style={styles.buttonText}>{b.title}</Text>
-          </VrButton>
-        )}
+        <View style={styles.contentWrapper}>
+          {current.buttons.map(b =>
+            <VrButton key={b.action} onClick={() => this.setScene(b.action)} style={b.style}>
+              <Text style={styles.buttonText}>{b.title}</Text>
+            </VrButton>
+          )}
+        </View>
+        <View style={styles.contentWrapper}>
+          {current.links.map(l =>
+            <VrButton key={l.action} onClick={() => this.handleLinks(l.action)} style={l.style}>
+              <Text style={styles.linkText}>{l.title}</Text>
+            </VrButton>
+          )}
+        </View>
       </View>
-    );
+    )
   }
 }
 
 const styles = StyleSheet.create({
   wrapper: {
+    height: 1500,
+    width: 4096
+  },
+  contentWrapper: {
+    //backgroundColor: 'rgba(0, 0, 0, 0.2)',
+    position: 'absolute',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
     height: 1500,
     width: 4096
   },
-  controls: {
-    backgroundColor: 'rgba(0, 0, 0, 0.7)',
-    padding: 10,
-    transform: [{translate: [-100, 200, 0]}]
-  },
-  title: {
-    color: '#ffffff',
-    textAlign: 'center',
-    fontSize: 38,
-    fontWeight: 'bold',
-  },
-  button: {
-    backgroundColor: '#c0c0d0',
-    borderRadius: 5,
-    width: 50,
-    height: 50,
-  },
   buttonText: {
     textAlign: 'center',
     color: 'white',
-    fontSize: 40,
+    fontSize: 42,
     fontWeight: 'bold',
   },
-});
+  linkText: {
+    textAlign: 'center',
+    color: 'white',
+    fontSize: 48,
+    fontWeight: 'bold',
+  },
+})
 
-AppRegistry.registerComponent('kamppa', () => Scenes);
+AppRegistry.registerComponent('kamppa', () => Scenes)

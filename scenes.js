@@ -4,6 +4,12 @@ const buttonStyle = {
   padding: 10,
 }
 
+const linkStyle = {
+  backgroundColor: 'rgba(37, 55, 101, 0.7)',
+  borderRadius: 5,
+  padding: 25,
+}
+
 export const scenes = [{
   name: 'yard',
   title: 'Kämpän pihapiiri',
@@ -33,7 +39,8 @@ export const scenes = [{
         transform: [{ translate: [-1750, 10, 0] }]
       },
     }
-  ]
+  ],
+  links: []
 },
   {
     name: 'kamppa_lobby',
@@ -64,7 +71,8 @@ export const scenes = [{
           transform: [{ translate: [-2000, 10, 0] }]
         },
       }
-    ]
+    ],
+    links: []
   },
   {
     name: 'sauna_lobby',
@@ -110,7 +118,8 @@ export const scenes = [{
           transform: [{ translate: [-2000, 60, 0] }]
         },
       }
-    ]
+    ],
+    links: []
   },
   {
     name: 'kitchen',
@@ -131,6 +140,32 @@ export const scenes = [{
         style: {
           ...buttonStyle,
           transform: [{ translate: [-1100, 0, 0] }]
+        },
+      }
+    ],
+    links: [
+      {
+        title: 'Kaasuhella',
+        action: 'https://kamppa.toolonsiniset.net/keitti%C3%B6/kaasuhella',
+        style: {
+          ...linkStyle,
+          transform: [{ translate: [-1700, -330, 0] }]
+        },
+      },
+      {
+        title: 'Jääkaapit',
+        action: 'https://kamppa.toolonsiniset.net/keitti%C3%B6/j%C3%A4%C3%A4kaapit',
+        style: {
+          ...linkStyle,
+          transform: [{ translate: [-1500, -400, 0] }]
+        },
+      },
+      {
+        title: 'Vesipata',
+        action: 'https://kamppa.toolonsiniset.net/keitti%C3%B6/keitti%C3%B6n-vesipata',
+        style: {
+          ...linkStyle,
+          transform: [{ translate: [-350, -430, 0] }]
         },
       }
     ]
@@ -156,7 +191,8 @@ export const scenes = [{
           transform: [{ translate: [-2000, 0, 0] }]
         },
       }
-    ]
+    ],
+    links: []
   },
   {
     name: 'main_1',
@@ -187,6 +223,32 @@ export const scenes = [{
           transform: [{ translate: [-400, 0, 0] }]
         },
       }
+    ],
+    links: [
+      {
+        title: 'Pönttöuuni',
+        action: 'https://kamppa.toolonsiniset.net/l%C3%A4mmitys/p%C3%B6ntt%C3%B6uuni',
+        style: {
+          ...linkStyle,
+          transform: [{ translate: [-600, 50, 0] }]
+        },
+      },
+      {
+        title: 'Öljykamiina',
+        action: 'https://kamppa.toolonsiniset.net/l%C3%A4mmitys/%C3%B6ljykamiina',
+        style: {
+          ...linkStyle,
+          transform: [{ translate: [-700, -400, 0] }]
+        },
+      },
+      {
+        title: 'Myrskylyhty',
+        action: 'https://kamppa.toolonsiniset.net/valaistus/myrskylyhty',
+        style: {
+          ...linkStyle,
+          transform: [{ translate: [1300, 0, 0] }]
+        },
+      }
     ]
   },
   {
@@ -200,6 +262,16 @@ export const scenes = [{
         style: {
           ...buttonStyle,
           transform: [{ translate: [100, 0, 0] }]
+        },
+      }
+    ],
+    links: [
+      {
+        title: 'Takka',
+        action: 'https://kamppa.toolonsiniset.net/l%C3%A4mmitys/takka',
+        style: {
+          ...linkStyle,
+          transform: [{ translate: [680, -90, 0] }]
         },
       }
     ]
@@ -225,6 +297,16 @@ export const scenes = [{
           transform: [{ translate: [-1350, 0, 0] }]
         },
       }
+    ],
+    links: [
+      {
+        title: 'Myrskylyhty',
+        action: 'https://kamppa.toolonsiniset.net/valaistus/myrskylyhty',
+        style: {
+          ...linkStyle,
+          transform: [{ translate: [-1000, -100, 0] }]
+        },
+      }
     ]
   },
   {
@@ -240,6 +322,7 @@ export const scenes = [{
           transform: [{ translate: [1300, 0, 0] }]
         },
       }
-    ]
+    ],
+    links: []
   }
 ]
