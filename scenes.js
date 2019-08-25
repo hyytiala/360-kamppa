@@ -299,16 +299,7 @@ export const scenes = [{
         },
       }
     ],
-    links: [
-      {
-        title: 'Myrskylyhty',
-        action: 'https://kamppa.toolonsiniset.net/valaistus/myrskylyhty',
-        style: {
-          ...linkStyle,
-          transform: [{ translate: [-1000, -100, 0] }]
-        },
-      }
-    ]
+    links: []
   },
   {
     name: 'sauna',
