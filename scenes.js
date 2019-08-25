@@ -95,7 +95,8 @@ export const scenes = [{
           transform: [{ translate: [-1800, 0, 0] }]
         },
       }
-    ]
+    ],
+    links: []
   },
   {
     name: 'yard_2',

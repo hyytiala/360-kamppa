@@ -20,7 +20,6 @@ class Scenes extends React.Component {
   }
 
   checkCache = async () => {
-    console.log('here')
     try {
       const value = await AsyncStorage.getItem('bg_id')
       console.log(value)
@@ -56,6 +55,7 @@ class Scenes extends React.Component {
     this.state.index % this.props.photos.length
       ]
     Environment.setBackgroundImage(current.uri, { format: '2D' })
+    console.log(current)
     return (
       <View style={styles.wrapper}>
         <View style={styles.contentWrapper}>
