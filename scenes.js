@@ -1,16 +1,17 @@
 const buttonStyle = {
   backgroundColor: 'rgba(0, 0, 0, 0.7)',
-  borderRadius: 5,
+  borderRadius: 11,
   padding: 10,
 }
 
 const linkStyle = {
   backgroundColor: 'rgba(37, 55, 101, 0.7)',
-  borderRadius: 5,
+  borderRadius: 11,
   padding: 25,
 }
 
-const baseUrl = 'https://dtdt7s4r9u90y.cloudfront.net/virtual-camp'
+//const baseUrl = 'https://dtdt7s4r9u90y.cloudfront.net/virtual-camp'
+const baseUrl = 'https://scout-kamppa.s3.eu-central-1.amazonaws.com/virtual-camp'
 
 export const scenes = [{
   name: 'yard',
@@ -79,7 +80,7 @@ export const scenes = [{
   {
     name: 'sauna_lobby',
     title: 'Saunan tupa',
-    uri: `${baseUrl}/saunan_tupa.jpg`,
+    uri: `${baseUrl}/sauna_tupa.jpg`,
     buttons: [
       {
         title: 'Piha',
