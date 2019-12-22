@@ -21,11 +21,13 @@ class Scenes extends React.Component {
 
   checkCache = async () => {
     try {
-      const value = await AsyncStorage.getItem('bg_id')
-      console.log(value)
-      if (value !== null) {
+      const cacheItem = await AsyncStorage.getItem('bg_id')
+      const halfHour = 30 * 60 * 1000
+      console.log(cacheItem)
+      if (cacheItem !== null && cacheItem.time + halfHour > Date.now()) {
+        console.log('TRUE')
         this.setState({
-          index: value
+          index: cacheItem.index
         })
       }
     } catch (error) {
@@ -35,8 +37,12 @@ class Scenes extends React.Component {
 
   setScene = (id) => {
     const index = this.props.photos.findIndex(p => p.name === id)
+    const cacheObject = {
+      index,
+      time: Date.now()
+    }
     try {
-      AsyncStorage.setItem('bg_id', index)
+      AsyncStorage.setItem('bg_id', cacheObject)
     } catch (error) {
       console.log(error)
     }
@@ -46,14 +52,13 @@ class Scenes extends React.Component {
   }
 
   handleLinks = (href) => {
-    console.log(href)
     NativeModules.LinkingManager.openURL(href)
   }
 
   render() {
     const current = this.props.photos[
-    this.state.index % this.props.photos.length
-      ]
+      this.state.index % this.props.photos.length
+    ]
     Environment.setBackgroundImage(current.uri, { format: '2D' })
     console.log(current)
     return (
