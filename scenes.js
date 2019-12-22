@@ -10,10 +10,12 @@ const linkStyle = {
   padding: 25,
 }
 
+const baseUrl = 'https://dtdt7s4r9u90y.cloudfront.net/virtual-camp'
+
 export const scenes = [{
   name: 'yard',
   title: 'Kämpän pihapiiri',
-  uri: './static_assets/piha_1.jpg',
+  uri: `${baseUrl}/piha_1.jpg`,
   buttons: [
     {
       title: 'Kämppä',
@@ -45,7 +47,7 @@ export const scenes = [{
   {
     name: 'kamppa_lobby',
     title: 'Kämpän eteinen',
-    uri: './static_assets/eteinen.jpg',
+    uri: `${baseUrl}/eteinen.jpg`,
     buttons: [
       {
         title: 'Piha',
@@ -77,7 +79,7 @@ export const scenes = [{
   {
     name: 'sauna_lobby',
     title: 'Saunan tupa',
-    uri: './static_assets/sauna_tupa.jpg',
+    uri: `${baseUrl}/saunan_tupa.jpg`,
     buttons: [
       {
         title: 'Piha',
@@ -101,7 +103,7 @@ export const scenes = [{
   {
     name: 'yard_2',
     title: 'Hakkuupaikka',
-    uri: './static_assets/piha_2.jpg',
+    uri: `${baseUrl}/piha_2.jpg`,
     buttons: [
       {
         title: 'Lippuaukea',
@@ -125,7 +127,7 @@ export const scenes = [{
   {
     name: 'kitchen',
     title: 'Keittiö',
-    uri: './static_assets/keittio.jpg',
+    uri: `${baseUrl}/keittio.jpg`,
     buttons: [
       {
         title: 'Eteinen',
@@ -174,7 +176,7 @@ export const scenes = [{
   {
     name: 'office',
     title: 'Pikkukämppä',
-    uri: './static_assets/pikkukamppa.jpg',
+    uri: `${baseUrl}/pikkukamppa.jpg`,
     buttons: [
       {
         title: 'Tupa',
@@ -198,7 +200,7 @@ export const scenes = [{
   {
     name: 'main_1',
     title: 'Tupa',
-    uri: './static_assets/tupa_2.jpg',
+    uri: `${baseUrl}/tupa_2.jpg`,
     buttons: [
       {
         title: 'Parvi',
@@ -255,7 +257,7 @@ export const scenes = [{
   {
     name: 'main_2',
     title: 'Parvi',
-    uri: './static_assets/tupa_1.jpg',
+    uri: `${baseUrl}/tupa_1.jpg`,
     buttons: [
       {
         title: 'Tupa',
@@ -280,7 +282,7 @@ export const scenes = [{
   {
     name: 'bathroom',
     title: 'Pesutupa',
-    uri: './static_assets/pesutupa.jpg',
+    uri: `${baseUrl}/pesutupa.jpg`,
     buttons: [
       {
         title: 'Sauna',
@@ -304,7 +306,7 @@ export const scenes = [{
   {
     name: 'sauna',
     title: 'Sauna',
-    uri: './static_assets/sauna.jpg',
+    uri: `${baseUrl}/sauna.jpg`,
     buttons: [
       {
         title: 'Pesuhuone',
