@@ -8,7 +8,7 @@ This application is created for viewing 360 photos of our scout troop's camping 
 
 Made with [React 360](https://facebook.github.io/react-360/)
 
-### Key features:
+## Key features:
 
 * Easy to use interface to navigate trought the premises
 * Big buttons indicating navigation options
@@ -26,11 +26,11 @@ Made with [React 360](https://facebook.github.io/react-360/)
 **Prerequisites:**
 * Node.js >10
 
-**Start development**
+**Start development:**
 1. Install yarn packages `yarn install`
 2. Start development server `yarn start`
 3. Application running at `http://localhost:8081/index.html`
 
-**Make production bundle**
+**Make production bundle:**
 1. Make bundle with `yarn bundle`
 2. Copy contains of `./build` to your server root and make directory `./static_assets` for all image assets.
